@@ -1,5 +1,5 @@
 {
-  "proxy": "https://money-manager-by-akshat.onrender.com/api/v1",
+  "proxy": "https://money-manager-by-akshat.onrender.com/api/v1/",
   "name": "client",
   "version": "0.1.0",
   "private": true,
