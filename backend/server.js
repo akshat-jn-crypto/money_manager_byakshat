@@ -38,7 +38,7 @@ app.use("/api/v1/transections", require("./routes/transectionRoutes"));
 // });
 
 //port
-const PORT = 8080 || process.env.PORT;
+const PORT = process.env.PORT;
 
 //listen server
 app.listen(PORT, () => {
