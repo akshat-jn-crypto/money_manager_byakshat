@@ -1,0 +1,29 @@
+{
+  "name": "expense-management-system",
+  "version": "1.0.0",
+  "description": "expanse tracker app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\" "
+  },
+  "keywords": [],
+  "author": "Akshat",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "concurrently": "^8.2.0",
+    "cors": "^2.8.5",
+    "create-react-app": "^5.0.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "mongoose": "^7.3.4",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.0.1",
+    "npx": "^10.2.2",
+    "supervisor": "^0.12.0"
+  }
+}
