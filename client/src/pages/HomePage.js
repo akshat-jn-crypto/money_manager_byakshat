@@ -10,6 +10,7 @@ import axios from "axios";
 import Spinner from "./../components/Spinner";
 import moment from "moment";
 import Analytics from "../components/Analytics";
+// import {API} from "../backend"
 const { RangePicker } = DatePicker;
 
 const HomePage = () => {
@@ -135,7 +136,7 @@ const HomePage = () => {
         setEditable(null);
       } catch (error) {
         setLoading(false);
-        message.error("Faild to add transection");
+        message.error("Failed to add transection");
       }
     };
 
