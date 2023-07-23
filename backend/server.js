@@ -21,9 +21,10 @@ app.use(express.json());
 app.use(cors());
 
 //routes testing
-app.get("/", (req, res) => {
-    res.send('<h1>Hello from server</h1>');
-})
+app.get('/', function(req, res){
+  console.log("Root Route")
+  res.json({ message: "hello world" });
+});
 
 //user routes
 app.use("/api/v1/users", require("./routes/userRoute"));
@@ -31,11 +32,11 @@ app.use("/api/v1/users", require("./routes/userRoute"));
 app.use("/api/v1/transections", require("./routes/transectionRoutes"));
 
 //static files
-// app.use(express.static(path.join(__dirname, "./client/build")));
+app.use(express.static(path.join(__dirname, "./client/build")));
 
-// app.get("*", function (req, res) {
-//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 //port
 const PORT = process.env.PORT;
