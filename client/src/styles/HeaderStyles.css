@@ -33,3 +33,15 @@
   margin-top: 10px;
   margin-right: 20px;
 }
+
+.navbar-nav.flex-row .nav-item {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 576px) {
+  .navbar { padding: 10px 8px; }
+  .navbar .navbar-brand { font-size: 1.15rem !important; }
+  .navbar .nav-item p.nav-link.user-name { display: none; }
+  .navbar .btn { padding: 6px 14px; }
+}

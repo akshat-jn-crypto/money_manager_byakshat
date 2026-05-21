@@ -199,7 +199,11 @@ const HomePage = () => {
       </div>
       <div className="content">
         {viewData === "table" ? (
-          <Table columns={columns} dataSource={allTransection} />
+          <Table
+            columns={columns}
+            dataSource={allTransection}
+            scroll={{ x: "max-content" }}
+          />
         ) : (
           <Analytics allTransection={allTransection} />
         )}

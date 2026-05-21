@@ -176,3 +176,36 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #c7d2fe; border-radius: 10px; }
 ::-webkit-scrollbar-thumb:hover { background: #a5b4fc; }
+
+/* ============================================================
+   Responsive / mobile
+   ============================================================ */
+@media (max-width: 992px) {
+  .ant-table-wrapper { margin: 0 10px; }
+}
+
+@media (max-width: 768px) {
+  .content { padding: 6px 2px 24px; }
+
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin: 12px;
+    padding: 16px;
+  }
+  .filters > div { width: 100%; }
+  .filters .ant-select { width: 100% !important; }
+  .filters .ant-picker { width: 100%; }
+  .filters .switch-icons { justify-content: center; }
+  .filters .btn { width: 100%; }
+
+  .ant-table-wrapper { margin: 0 8px; }
+  .card-header { font-size: 0.95rem; }
+  .ant-modal { max-width: calc(100vw - 24px); margin: 12px auto; }
+}
+
+@media (max-width: 576px) {
+  .filters h6 { font-size: 0.72rem; }
+  .ant-table { font-size: 0.85rem; }
+}

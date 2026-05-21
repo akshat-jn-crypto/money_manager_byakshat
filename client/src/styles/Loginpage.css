@@ -90,3 +90,13 @@
 
 .login-form a { color: var(--primary-dark, #4f46e5) !important; font-weight: 600; }
 .login-form a:hover { color: var(--accent, #8b5cf6) !important; }
+
+@media (max-width: 768px) {
+  .login-page { padding: 16px 12px; }
+  .login-page > .row,
+  .login-page .container { padding: 16px; border-radius: 18px; }
+  .login-page h1 { font-size: 1.5rem; margin-bottom: 16px; }
+  .login-page img { display: none; }
+  .login-form { padding: 26px 20px; margin-left: 0; }
+  .login-form h1 { font-size: 1.5rem; margin-bottom: 18px; }
+}

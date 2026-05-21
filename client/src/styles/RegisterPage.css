@@ -62,3 +62,9 @@
 
 .register-form a { color: var(--primary-dark, #4f46e5) !important; font-weight: 600; }
 .register-form a:hover { color: var(--accent, #8b5cf6) !important; }
+
+@media (max-width: 576px) {
+  .register-page { padding: 16px 12px; }
+  .register-form { padding: 28px 20px; border-radius: 16px; }
+  .register-form h2 { font-size: 1.6rem; }
+}
