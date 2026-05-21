@@ -1,47 +1,178 @@
-*{
+/* ============================================================
+   Expense Management System — global theme
+   ============================================================ */
+
+* {
   padding: 0;
-  margin:0;
-  box-sizing:border-box;
+  margin: 0;
+  box-sizing: border-box;
 }
 
+:root {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --accent: #8b5cf6;
+  --income: #10b981;
+  --expense: #f43f5e;
+  --bg-start: #eef2ff;
+  --bg-end: #faf5ff;
+  --surface: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --border: #e7e9f3;
+  --radius: 16px;
+  --shadow-sm: 0 2px 10px rgba(2, 6, 23, 0.06);
+  --shadow: 0 12px 30px rgba(79, 70, 229, 0.12);
+  --gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+}
+
+body {
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+  font-family: "Poppins", "Inter", sans-serif;
+}
+
+/* ===== Page content wrapper ===== */
 .content {
-  height: 80vh;
+  min-height: 80vh;     /* was a fixed height -> clipped the analytics cards */
+  padding: 10px 6px 30px;
 }
 
-.navbar {
-  background-color: aquamarine !important;
+/* ===== Buttons (Bootstrap overrides) ===== */
+.btn {
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.2px;
+  padding: 8px 20px;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s ease !important;
+}
+.btn-primary {
+  background: var(--gradient) !important;
+  border: none !important;
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.35) !important;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow: 0 10px 22px rgba(99, 102, 241, 0.45) !important;
 }
 
-.resgister-page {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  height: 90vh;
+/* ===== Cards (analytics) ===== */
+.card {
+  border: none !important;
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow) !important;
+  background: var(--surface);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 42px rgba(79, 70, 229, 0.18) !important;
+}
+.card-header {
+  background: var(--gradient) !important;
+  color: #fff !important;
+  font-weight: 600;
+  border: none !important;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  border-radius: var(--radius) var(--radius) 0 0 !important;
+  padding: 14px 18px;
+}
+.card-body { padding: 1.1rem 1.25rem; }
+
+.text-success { color: var(--income) !important; }
+.text-danger  { color: var(--expense) !important; }
+
+/* category section headers in Analytics + footer */
+.bg-dark    { background: linear-gradient(135deg, #1e293b 0%, #312e81 100%) !important; }
+.bg-warning {
+  background: linear-gradient(135deg, #fb7185 0%, #f43f5e 100%) !important;
+  color: #fff !important;
 }
 
-/*trasection page*/
+/* ===== Filters bar ===== */
 .filters {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
-  padding: 15px 20px;
-  /* box-shadow: 0 0 3px greenyellow; */
+  flex-wrap: wrap;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  margin: 16px;
+  box-shadow: var(--shadow-sm);
+}
+.filters h6 {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 8px;
 }
 
+/* ===== View switch icons ===== */
 .switch-icons {
-  /* border: 1px solid rgba(0, 0, 0, 0.677); */
-  border-radius: 5px;
-  padding: 10px 15px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background: #eef2ff;
+  border-radius: 12px;
+  padding: 8px 14px;
+}
+.anticon svg { font-size: 20px; cursor: pointer; }
+.active-icon   { color: var(--primary-dark); }
+.inactive-icon { color: #94a3b8; }
+
+/* ===== Ant Design — inputs / selects / pickers ===== */
+.ant-input,
+.ant-input-affix-wrapper,
+.ant-select-selector,
+.ant-picker {
+  border-radius: 10px !important;
+}
+.ant-input:focus,
+.ant-input-focused,
+.ant-input-affix-wrapper-focused,
+.ant-select-focused .ant-select-selector,
+.ant-picker-focused {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15) !important;
 }
 
-.anticon svg {
-  font-size: 20px;
-  cursor: pointer;
+/* ===== Ant Design — table ===== */
+.ant-table-wrapper { margin: 0 16px; }
+.ant-table {
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow-sm);
 }
+.ant-table-thead > tr > th {
+  background: #eef2ff !important;
+  color: var(--primary-dark) !important;
+  font-weight: 600 !important;
+  border-bottom: 2px solid #e0e7ff !important;
+}
+.ant-table-tbody > tr:hover > td { background: #f5f3ff !important; }
+.ant-table .anticon { color: var(--primary); margin: 0 5px; transition: color 0.15s ease; }
+.ant-table .anticon:hover { color: var(--accent); }
 
-.active-icon {
-  color: black;
-}
-.inactive-icon {
-  color: gray;
-}
+/* ===== Ant Design — modal ===== */
+.ant-modal-content { border-radius: var(--radius) !important; overflow: hidden; }
+.ant-modal-title { font-weight: 700 !important; color: var(--text) !important; }
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #c7d2fe; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #a5b4fc; }

@@ -1,17 +1,35 @@
 .navbar {
-    background-color: #6f4e3742 !important;
-  }
-  .navbar .navbar-brand {
-    color: #6f4e37 !important;
-    font-weight: bold;
-    font-size: 1.5rem;
-  }
-  
-  .nav-link {
-    font-size: 1.2rem;
-  }
-  
-  .navbar h6 {
-    margin-top: 10px;
-    margin-right: 20px;
-  }
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 18px rgba(79, 70, 229, 0.1);
+  padding: 12px 10px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .navbar-brand {
+  font-weight: 800 !important;
+  font-size: 1.5rem !important;
+  color: #4f46e5 !important;
+}
+
+.nav-link {
+  font-size: 1rem;
+  color: var(--text, #1e293b) !important;
+  font-weight: 600;
+}
+
+/* logged-in user name shown as a chip */
+.navbar .nav-item p.nav-link {
+  background: #eef2ff;
+  color: #4f46e5 !important;
+  border-radius: 20px;
+  padding: 6px 16px !important;
+  margin: 0 12px 0 0;
+}
+
+.navbar h6 {
+  margin-top: 10px;
+  margin-right: 20px;
+}
