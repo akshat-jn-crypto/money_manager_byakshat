@@ -12,6 +12,9 @@
   "keywords": [],
   "author": "Akshat",
   "license": "MIT",
+  "engines": {
+    "node": "22.x"
+  },
   "dependencies": {
     "colors": "^1.4.0",
     "concurrently": "^8.2.0",
