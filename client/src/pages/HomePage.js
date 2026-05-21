@@ -22,6 +22,7 @@ const HomePage = () => {
   const [type, setType] = useState("all");
   const [viewData, setViewData] = useState("table");
   const [editable, setEditable] = useState(null);
+  const [refresh, setRefresh] = useState(0);
   //getall transactions
 
     //table data
@@ -91,7 +92,7 @@ const HomePage = () => {
         }
       };
         getAllTransactions();
-       },[frequency,selectedDate,type]);
+       },[frequency,selectedDate,type,refresh]);
 
 
       const handleDelete = async (record) => {
@@ -102,6 +103,7 @@ const HomePage = () => {
           });
           setLoading(false);
           message.success("Transaction Deleted!");
+          setRefresh((r) => r + 1);
         } catch (error) {
           setLoading(false);
           console.log(error);
@@ -134,6 +136,7 @@ const HomePage = () => {
         }
         setShowModal(false);
         setEditable(null);
+        setRefresh((r) => r + 1);
       } catch (error) {
         setLoading(false);
         message.error("Failed to add transection");
