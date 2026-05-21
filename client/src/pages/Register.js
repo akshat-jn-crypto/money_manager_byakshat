@@ -12,13 +12,15 @@ const Register = () => {
   const submitHandler = async (values) => {
     try {
       setLoading(true);
-      await axios.post("/users/register", values);
+      await axios.post("/api/v1/users/register", values);
       message.success("Registeration Successfull");
       setLoading(false);
       navigate("/login");
     } catch (error) {
       setLoading(false);
-      message.error("something went wrong");
+      message.error(
+        error?.response?.data?.message || "Something went wrong"
+      );
     }
   };
 
