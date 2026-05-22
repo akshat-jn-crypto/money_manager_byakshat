@@ -111,7 +111,6 @@ const forgotPasswordController = async (req, res) => {
         return res.status(500).json({
           success: false,
           message: "Could not send the reset email. Please try again later.",
-          detail: mailErr.message, // TEMP: for debugging, removed after diagnosis
         });
       }
     }
